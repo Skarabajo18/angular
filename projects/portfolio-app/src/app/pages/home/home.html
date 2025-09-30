@@ -1,0 +1,31 @@
+﻿<section class="hero">
+  <p class="overline">Hola, soy</p>
+  <h1>{{ profile.name }}</h1>
+  <h2>{{ profile.role }}</h2>
+  <p class="bio">{{ profile.bio }}</p>
+
+  <div class="actions">
+    <a routerLink="/contacto" class="primary">Hablemos</a>
+    <a routerLink="/sobre-mi" class="ghost">Ver skills</a>
+  </div>
+</section>
+
+<section class="projects">
+  <h3>Proyectos destacados</h3>
+  <article *ngFor="let project of featuredProjects">
+    <header>
+      <h4>{{ project.name }}</h4>
+      <span>{{ project.tech.join(' · ') }}</span>
+    </header>
+    <p>{{ project.description }}</p>
+    <a
+      class="link"
+      *ngIf="project.link"
+      [href]="project.link"
+      target="_blank"
+      rel="noopener"
+    >
+      Ver proyecto
+    </a>
+  </article>
+</section>

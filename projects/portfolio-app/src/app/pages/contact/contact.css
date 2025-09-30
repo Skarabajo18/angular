@@ -1,0 +1,119 @@
+﻿:host {
+  display: block;
+}
+
+.contact {
+  display: grid;
+  gap: 2rem;
+}
+
+header h1 {
+  margin: 0 0 0.5rem;
+  font-size: 2rem;
+}
+
+header p {
+  margin: 0;
+  max-width: 640px;
+  color: #4b5563;
+}
+
+.layout {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.info {
+  padding: 1.75rem;
+  border-radius: 1.25rem;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(59, 130, 246, 0.05));
+  display: grid;
+  gap: 1rem;
+}
+
+.info ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.info li {
+  color: #1f2937;
+}
+
+.info strong {
+  display: inline-block;
+  width: 120px;
+  font-weight: 600;
+}
+
+.social {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.social a {
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  background-color: #1d4ed8;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.form {
+  padding: 1.75rem;
+  border-radius: 1.25rem;
+  background-color: #fff;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
+  display: grid;
+  gap: 1rem;
+}
+
+.form label {
+  display: grid;
+  gap: 0.5rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.form input,
+.form textarea {
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.75rem;
+  font: inherit;
+}
+
+.form button {
+  margin-top: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 0.75rem;
+  background-color: #2563eb;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.form button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.success {
+  margin: 0;
+  color: #047857;
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .info strong {
+    width: auto;
+    margin-right: 0.35rem;
+  }
+}

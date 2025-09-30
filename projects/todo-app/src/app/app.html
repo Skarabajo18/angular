@@ -1,0 +1,32 @@
+﻿<main class="layout">
+  <header>
+    <h1>Lista de tareas Angular</h1>
+    <p class="lead">
+      Crea, organiza y practica comunicación entre componentes en una sola vista.
+    </p>
+    <div class="stats" *ngIf="tasks().length > 0">
+      <span>Total: {{ tasks().length }}</span>
+      <span>Completadas: {{ completedTasks() }}</span>
+      <span>Pendientes: {{ pendingTasks() }}</span>
+    </div>
+  </header>
+
+  <section class="content">
+    <app-task-form
+      [task]="selectedTask()"
+      (save)="handleSave($event)"
+      (cancel)="clearSelection()"
+    ></app-task-form>
+
+    <p class="editing" *ngIf="selectedTask() as task">
+      Editando: <strong>{{ task.title }}</strong>
+    </p>
+
+    <app-task-list
+      [tasks]="tasks()"
+      (toggleComplete)="toggleComplete($event)"
+      (edit)="startEdit($event)"
+      (delete)="removeTask($event)"
+    ></app-task-list>
+  </section>
+</main>

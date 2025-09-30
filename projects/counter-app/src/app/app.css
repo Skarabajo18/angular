@@ -1,0 +1,133 @@
+﻿:host {
+  display: block;
+  min-height: 100vh;
+  padding: 2rem 1.5rem;
+  background: radial-gradient(circle at top, #eef2ff, #f8fafc 55%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #1f2937;
+}
+
+.counter {
+  max-width: 640px;
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0 0 0.5rem;
+  font-size: 2.2rem;
+}
+
+header p {
+  margin: 0;
+  color: #4b5563;
+}
+
+.display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.display button {
+  width: 64px;
+  height: 64px;
+  border: none;
+  border-radius: 50%;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #2563eb;
+  color: #fff;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.display button:disabled {
+  background-color: #cbd5f5;
+  cursor: not-allowed;
+}
+
+.display button:not(:disabled):hover {
+  transform: translateY(-2px);
+}
+
+.value {
+  min-width: 160px;
+  padding: 1.5rem 1rem;
+  border-radius: 1rem;
+  background-color: #fff;
+  box-shadow: 0 12px 30px rgba(79, 70, 229, 0.15);
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.value.positive {
+  color: #047857;
+}
+
+.value.negative {
+  color: #b91c1c;
+}
+
+.controls {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  align-items: end;
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+}
+
+.controls label {
+  display: grid;
+  gap: 0.5rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.controls input {
+  padding: 0.55rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.75rem;
+  font: inherit;
+}
+
+.reset {
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 0.75rem;
+  background-color: #f97316;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.feedback {
+  font-weight: 600;
+  color: #1d4ed8;
+}
+
+.feedback p {
+  margin: 0.25rem 0;
+}
+
+@media (max-width: 520px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  .display button {
+    width: 56px;
+    height: 56px;
+  }
+
+  .value {
+    min-width: 120px;
+    font-size: 2rem;
+  }
+}

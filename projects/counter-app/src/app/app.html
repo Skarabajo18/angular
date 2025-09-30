@@ -1,0 +1,43 @@
+﻿<main class="counter">
+  <header>
+    <h1>Contador interactivo</h1>
+    <p>Practica two-way binding con ngModel controlando el valor, el paso y los límites.</p>
+  </header>
+
+  <section class="display">
+    <button type="button" (click)="decrement()" [disabled]="isAtMin">−</button>
+    <div class="value" [class.positive]="count > 0" [class.negative]="count < 0">
+      {{ count }}
+    </div>
+    <button type="button" (click)="increment()" [disabled]="isAtMax">+</button>
+  </section>
+
+  <section class="controls">
+    <label>
+      Valor actual
+      <input type="number" [(ngModel)]="count" (ngModelChange)="clampCount()" />
+    </label>
+
+    <label>
+      Paso
+      <input type="number" min="1" [(ngModel)]="step" (ngModelChange)="normalizeStep()" />
+    </label>
+
+    <label>
+      Límite inferior
+      <input type="number" [(ngModel)]="min" (ngModelChange)="updateMin()" />
+    </label>
+
+    <label>
+      Límite superior
+      <input type="number" [(ngModel)]="max" (ngModelChange)="updateMax()" />
+    </label>
+
+    <button type="button" class="reset" (click)="reset()">Reiniciar</button>
+  </section>
+
+  <div class="feedback" *ngIf="isAtMax || isAtMin">
+    <p *ngIf="isAtMax">Has alcanzado el límite superior.</p>
+    <p *ngIf="isAtMin">Has alcanzado el límite inferior.</p>
+  </div>
+</main>

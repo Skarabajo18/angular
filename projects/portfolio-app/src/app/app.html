@@ -1,0 +1,26 @@
+﻿<div class="app-shell">
+  <nav class="navigation">
+    <a class="brand" routerLink="/">{{ profile.name }}</a>
+    <ul>
+      <li *ngFor="let item of navItems">
+        <a
+          [routerLink]="item.path"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: item.path === '/' }"
+        >
+          {{ item.label }}
+        </a>
+      </li>
+    </ul>
+    <a class="cta" routerLink="/contacto">Disponible</a>
+  </nav>
+
+  <main class="content">
+    <router-outlet></router-outlet>
+  </main>
+
+  <footer>
+    <span>© {{ profile.name }} · {{ profile.contact.location }}</span>
+    <a [href]="profile.contact.social.linkedin" target="_blank" rel="noopener">LinkedIn</a>
+  </footer>
+</div>

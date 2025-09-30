@@ -1,0 +1,29 @@
+﻿<form class="task-form" (ngSubmit)="submit()" #taskForm="ngForm">
+  <h2>{{ isEditing ? 'Editar tarea' : 'Nueva tarea' }}</h2>
+
+  <label class="field">
+    <span>Título</span>
+    <input
+      type="text"
+      name="title"
+      required
+      [(ngModel)]="model.title"
+      placeholder="Ej. Aprender Angular"
+    />
+  </label>
+
+  <label class="field">
+    <span>Descripción</span>
+    <textarea
+      name="description"
+      rows="3"
+      [(ngModel)]="model.description"
+      placeholder="Detalles adicionales"
+    ></textarea>
+  </label>
+
+  <div class="actions">
+    <button type="submit">{{ isEditing ? 'Actualizar' : 'Agregar' }}</button>
+    <button type="button" *ngIf="isEditing" (click)="handleCancel()">Cancelar</button>
+  </div>
+</form>

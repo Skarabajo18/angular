@@ -1,0 +1,69 @@
+﻿<section class="contact">
+  <header>
+    <h1>Contacto</h1>
+    <p>
+      ¿Tienes un proyecto o idea en mente? Escríbeme y conversemos sobre cómo puedo ayudarte.
+    </p>
+  </header>
+
+  <div class="layout">
+    <div class="info">
+      <h2>Información directa</h2>
+      <ul>
+        <li><strong>Email:</strong> {{ contact.email }}</li>
+        <li><strong>Teléfono:</strong> {{ contact.phone }}</li>
+        <li><strong>Ubicación:</strong> {{ contact.location }}</li>
+        <li><strong>Disponibilidad:</strong> {{ contact.availability }}</li>
+      </ul>
+
+      <div class="social">
+        <a [href]="contact.social.github" target="_blank" rel="noopener">GitHub</a>
+        <a [href]="contact.social.linkedin" target="_blank" rel="noopener">LinkedIn</a>
+        <a [href]="contact.social.twitter" target="_blank" rel="noopener">Twitter</a>
+      </div>
+    </div>
+
+    <form class="form" (ngSubmit)="sendMessage()" #contactForm="ngForm">
+      <h2>Envíame un mensaje</h2>
+
+      <label>
+        Nombre
+        <input
+          type="text"
+          name="name"
+          required
+          [(ngModel)]="formModel.name"
+          placeholder="Tu nombre"
+        />
+      </label>
+
+      <label>
+        Email
+        <input
+          type="email"
+          name="email"
+          required
+          [(ngModel)]="formModel.email"
+          placeholder="tu@correo.com"
+        />
+      </label>
+
+      <label>
+        Mensaje
+        <textarea
+          name="message"
+          rows="4"
+          required
+          [(ngModel)]="formModel.message"
+          placeholder="Cuéntame sobre tu proyecto"
+        ></textarea>
+      </label>
+
+      <button type="submit" [disabled]="contactForm.invalid">Enviar</button>
+
+      <p class="success" *ngIf="submitted">
+        ¡Gracias! Responderé tu mensaje muy pronto.
+      </p>
+    </form>
+  </div>
+</section>

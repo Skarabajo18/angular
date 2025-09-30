@@ -1,0 +1,133 @@
+﻿:host {
+  display: block;
+}
+
+.hero {
+  display: grid;
+  gap: 0.75rem;
+  text-align: center;
+  padding: 3rem 1.5rem 2.5rem;
+  background: linear-gradient(145deg, rgba(59, 130, 246, 0.1), rgba(236, 72, 153, 0.1));
+  border-radius: 1.5rem;
+  backdrop-filter: blur(4px);
+}
+
+.overline {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.4rem;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 2.75rem;
+}
+
+.hero h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #4b5563;
+  font-weight: 400;
+}
+
+.bio {
+  margin: 0 auto;
+  max-width: 620px;
+  color: #374151;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.actions a {
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.actions a.primary {
+  background-color: #2563eb;
+  color: #fff;
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.35);
+}
+
+.actions a.ghost {
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 2px solid #2563eb;
+  color: #2563eb;
+}
+
+.actions a:hover {
+  transform: translateY(-2px);
+}
+
+.projects {
+  margin-top: 2.5rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.projects h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.projects article {
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+  background-color: #fff;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+  display: grid;
+  gap: 0.75rem;
+}
+
+.projects header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.75rem;
+  justify-content: space-between;
+}
+
+.projects span {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.projects p {
+  margin: 0;
+  color: #374151;
+}
+
+.link {
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 2.25rem 1.25rem 1.75rem;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+}

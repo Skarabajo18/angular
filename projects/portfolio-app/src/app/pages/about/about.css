@@ -1,0 +1,86 @@
+﻿:host {
+  display: block;
+}
+
+.about {
+  display: grid;
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+header h1 {
+  margin: 0 0 0.5rem;
+  font-size: 2rem;
+}
+
+header p {
+  margin: 0;
+  max-width: 720px;
+  color: #4b5563;
+}
+
+.skills ul {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.skills li {
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: #f3f4f6;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.skills strong {
+  font-size: 1.1rem;
+}
+
+.skills span {
+  color: #6b7280;
+}
+
+.experience article {
+  padding: 1.5rem;
+  border-left: 4px solid #2563eb;
+  border-radius: 1rem;
+  background-color: #fff;
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
+  display: grid;
+  gap: 0.5rem;
+}
+
+.experience header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.experience span {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.tools .chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.tools span {
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  background-color: rgba(37, 99, 235, 0.15);
+  color: #1d4ed8;
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .experience article {
+    border-left-width: 3px;
+  }
+}

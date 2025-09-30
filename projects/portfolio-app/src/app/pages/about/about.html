@@ -1,0 +1,34 @@
+﻿<section class="about">
+  <header>
+    <h1>Sobre mí</h1>
+    <p>{{ bio }}</p>
+  </header>
+
+  <section class="skills">
+    <h2>Skills principales</h2>
+    <ul>
+      <li *ngFor="let skill of skills">
+        <strong>{{ skill.name }}</strong>
+        <span>{{ skill.level }}</span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="experience">
+    <h2>Experiencia profesional</h2>
+    <article *ngFor="let exp of experiences">
+      <header>
+        <h3>{{ exp.role }}</h3>
+        <span>{{ exp.company }} · {{ exp.period }}</span>
+      </header>
+      <p>{{ exp.description }}</p>
+    </article>
+  </section>
+
+  <section class="tools">
+    <h2>Herramientas favoritas</h2>
+    <div class="chips">
+      <span *ngFor="let tool of tools">{{ tool }}</span>
+    </div>
+  </section>
+</section>
